@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Rozetka-test">
+    <test name="Test">
+        <classes>
+            <class name="rozetka.test.core.tests.ProductSortingTest"/>
+            <class name="rozetka.test.core.tests.ProductPurchaseTest"/>
+        </classes>
+    </test>
+</suite>
