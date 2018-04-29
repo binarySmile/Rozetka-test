@@ -13,13 +13,16 @@ public class ProductPage {
     private SelenideElement buyButton;
 
     @FindBy(xpath = "//*[@id='cart-popup']//div/h2")
-    private SelenideElement basketStatus;
+    private SelenideElement descriptionOfBasketStatus;
 
-    @FindBy(xpath = "//*[@id='cart-popup']//div/input")
-    private SelenideElement quantityInputField;
+    @FindBy(className = "cart-check-wrap")
+    private SelenideElement basketCleaningButton;
+
+    @FindBy(xpath = "//*[@class='cart-i-delete']/a[@name='delete']")
+    private SelenideElement confirmationOfCleaningButton;
 
     @FindBy(xpath = "//*[@id='drop-block']/h2")
-    private SelenideElement basketStateResult;
+    private SelenideElement basketState;
 
     public SelenideElement getTitleProduct(String productName) {
         return titleProduct.shouldBe(Condition.exactText(productName));
@@ -30,15 +33,15 @@ public class ProductPage {
     }
 
     public SelenideElement getBasketStatus(String descriptionOfStatus) {
-        return basketStatus.shouldBe(Condition.exactText(descriptionOfStatus));
+        return descriptionOfBasketStatus.shouldBe(Condition.exactText(descriptionOfStatus));
     }
 
-    public void quantityProductSelection(String quantity) {
-        quantityInputField.clear();
-        quantityInputField.val(quantity).pressEnter();
+    public void cleaningBasket() {
+        basketCleaningButton.click();
+        confirmationOfCleaningButton.click();
     }
 
-    public SelenideElement getBasketStateResult() {
-        return basketStateResult;
+    public SelenideElement getBasketStateResult(String status) {
+        return basketState.shouldBe(Condition.text(status));
     }
 }

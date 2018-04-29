@@ -11,7 +11,7 @@ import java.util.List;
 public class MainPage extends BaseTest {
 
     @FindBy(xpath = "//*[@id='m-main-ul']/li")
-    private List <WebElement> catalogCategory;
+    private List <WebElement> catalogOfCategories;
 
     @FindBy(className = "pab-h1")
     private SelenideElement titlePage;
@@ -31,7 +31,7 @@ public class MainPage extends BaseTest {
     }
 
     public void choiceOfCategory(String type) {
-        choiceOfElement(type, catalogCategory);
+        choiceOfElement(type, catalogOfCategories);
     }
 
     public SelenideElement getTitlePage(String type) {

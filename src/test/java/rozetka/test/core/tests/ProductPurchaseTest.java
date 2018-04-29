@@ -11,14 +11,14 @@ import static org.testng.Assert.assertTrue;
 public class ProductPurchaseTest extends BaseTest {
 
     @Test
-    public void selectionAndPurchaseOfProduct() {
+    public void selectionAndCancellationOfProductPurchase() {
         MainPage mainPage = page(MainPage.class);
         mainPage.searchProduct(getProductName());
         ProductPage productPage = page(ProductPage.class);
         assertTrue(productPage.getTitleProduct(getProductName()).isDisplayed());
         productPage.addProductToBasket();
         assertTrue(productPage.getBasketStatus(getDescriptionOfStatus()).isDisplayed());
-        productPage.quantityProductSelection(getQuantityOfProduct());
-        assertTrue(productPage.getBasketStateResult().isDisplayed());
+        productPage.cleaningBasket();
+        assertTrue(productPage.getBasketStateResult(getBasketStatus()).isDisplayed());
     }
 }

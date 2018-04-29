@@ -66,10 +66,10 @@ public class BaseTest {
     }
 
     protected String getDescriptionOfStatus() {
-        return data.getProperty("basket_status");
+        return data.getProperty("description_of_basket");
     }
 
-    protected String getQuantityOfProduct() {
-        return data.getProperty("quantity_product");
+    protected String getBasketStatus() {
+        return data.getProperty("basket_status");
     }
 }

@@ -15,7 +15,7 @@ public class CategoryPage {
     private List <WebElement> typeOfProduct;
 
     @FindBy(className = "title-page")
-    private SelenideElement titlePageName;
+    private SelenideElement pageName;
 
     @FindBy(xpath = "//*[@class='arrow-link-inner']")
     private List <WebElement> generalSortingLinks;
@@ -28,7 +28,7 @@ public class CategoryPage {
     }
 
     public SelenideElement getTitlePageName(String type) {
-        return titlePageName.shouldBe(Condition.text(type));
+        return pageName.shouldBe(Condition.text(type));
     }
 
     public void choiceGeneralSorting(String generalSort) {
